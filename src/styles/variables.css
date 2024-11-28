@@ -1,0 +1,438 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* primary colors */
+:root {
+  color-scheme: light dark;
+
+  --gray-25: light-dark(#fcfcfc, #fafafa);
+  --gray-50: light-dark(#fafafa, #f7f7f7);
+  --gray-100: light-dark(#f5f5f5, #f0f0f1);
+  --gray-200: light-dark(#e9eaeb, #ececed);
+  --gray-300: light-dark(#d5d7da, #cecfd2);
+  --gray-400: light-dark(#a4a7ae, #94979c);
+  --gray-500: light-dark(#717680, #85888e);
+  --gray-600: light-dark(#535862, #61656c);
+  --gray-700: light-dark(#414651, #373a41);
+  --gray-800: light-dark(#252b37, #22262f);
+  --gray-900: light-dark(#181d27, #13161b);
+  --gray-950: light-dark(#0a0d12, #0c0e12);
+
+  --error-25: #fffafa;
+  --error-50: #fef3f2;
+  --error-100: #fee4e2;
+  --error-200: #fecdc9;
+  --error-300: #fda19b;
+  --error-400: #f97066;
+  --error-500: #f04438;
+  --error-600: #d92d20;
+  --error-700: #b32318;
+  --error-800: #912018;
+  --error-900: #7a271a;
+  --error-950: #55160c;
+
+  --warning-25: #f6fef9;
+  --warning-50: #ecfdf3;
+  --warning-100: #dbfae6;
+  --warning-200: #a9efc5;
+  --warning-300: #75e0a7;
+  --warning-400: #47cd89;
+  --warning-500: #17b26a;
+  --warning-600: #079455;
+  --warning-700: #067647;
+  --warning-800: #085d3a;
+  --warning-900: #074d31;
+  --warning-950: #053321;
+
+  --success-25: #f6fef9;
+  --success-50: #ecfdf3;
+  --success-100: #dbfae6;
+  --success-200: #a9efc5;
+  --success-300: #75e0a7;
+  --success-400: #47cd89;
+  --success-500: #17b26a;
+  --success-600: #079455;
+  --success-700: #067647;
+  --success-800: #085d3a;
+  --success-900: #074d31;
+  --success-950: #053321;
+}
+
+/* secondary colors */
+:root {
+  --green-25: #f6fef9;
+  --green-50: #ecfcf2;
+  --green-100: #d3f8df;
+  --green-200: #aaf0c4;
+  --green-300: #73e2a3;
+  --green-400: #3ccb7f;
+  --green-500: #16b364;
+  --green-600: #099250;
+  --green-700: #087443;
+  --green-800: #095c37;
+  --green-900: #084c2e;
+  --green-950: #052e1c;
+
+  --cyan-25: #f5feff;
+  --cyan-50: #ecfdff;
+  --cyan-100: #cff8fe;
+  --cyan-200: #a5f0fc;
+  --cyan-300: #67e3f9;
+  --cyan-400: #22ccee;
+  --cyan-500: #06aed4;
+  --cyan-600: #088ab2;
+  --cyan-700: #0e6f90;
+  --cyan-800: #155b75;
+  --cyan-900: #164c63;
+  --cyan-950: #0d2d3a;
+
+  --blue-25: #f5faff;
+  --blue-50: #eff8ff;
+  --blue-100: #d1e9ff;
+  --blue-200: #b2ddff;
+  --blue-300: #84caff;
+  --blue-400: #53b1fd;
+  --blue-500: #2e90fa;
+  --blue-600: #1570ef;
+  --blue-700: #175cd3;
+  --blue-800: #1849a9;
+  --blue-900: #194185;
+  --blue-950: #102a56;
+
+  --purple-25: #fcfaff;
+  --purple-50: #f9f5ff;
+  --purple-100: #f4ebff;
+  --purple-200: #e9d7fe;
+  --purple-300: #d6bbfb;
+  --purple-400: #b692f6;
+  --purple-500: #9e77ed;
+  --purple-600: #7f56d9;
+  --purple-700: #6941c6;
+  --purple-800: #53389e;
+  --purple-900: #42307d;
+  --purple-950: #2c1c5f;
+
+  --red-25: #fff5f6;
+  --red-50: #fff1f3;
+  --red-100: #ffe4e8;
+  --red-200: #feccd6;
+  --red-300: #fea3b4;
+  --red-400: #fd6f8e;
+  --red-500: #f63d68;
+  --red-600: #e31b53;
+  --red-700: #c01048;
+  --red-800: #a11043;
+  --red-900: #89123e;
+  --red-950: #510b24;
+
+  --orange-25: #fefaf5;
+  --orange-50: #fef6ee;
+  --orange-100: #fdead7;
+  --orange-200: #f9dbaf;
+  --orange-300: #f7b27a;
+  --orange-400: #f38744;
+  --orange-500: #ef6820;
+  --orange-600: #e04f16;
+  --orange-700: #b93815;
+  --orange-800: #932f19;
+  --orange-900: #772917;
+  --orange-950: #511c10;
+}
+
+/* brand colors */
+@layer utilities {
+  .green {
+    --brand-25: var(--green-25);
+    --brand-50: var(--green-50);
+    --brand-100: var(--green-100);
+    --brand-200: var(--green-200);
+    --brand-300: var(--green-300);
+    --brand-400: var(--green-400);
+    --brand-500: var(--green-500);
+    --brand-600: var(--green-600);
+    --brand-700: var(--green-700);
+    --brand-800: var(--green-800);
+    --brand-900: var(--green-900);
+    --brand-950: var(--green-950);
+  }
+
+  .cyan {
+    --brand-25: var(--cyan-25);
+    --brand-50: var(--cyan-50);
+    --brand-100: var(--cyan-100);
+    --brand-200: var(--cyan-200);
+    --brand-300: var(--cyan-300);
+    --brand-400: var(--cyan-400);
+    --brand-500: var(--cyan-500);
+    --brand-600: var(--cyan-600);
+    --brand-700: var(--cyan-700);
+    --brand-800: var(--cyan-800);
+    --brand-900: var(--cyan-900);
+    --brand-950: var(--cyan-950);
+  }
+
+  .blue {
+    --brand-25: var(--blue-25);
+    --brand-50: var(--blue-50);
+    --brand-100: var(--blue-100);
+    --brand-200: var(--blue-200);
+    --brand-300: var(--blue-300);
+    --brand-400: var(--blue-400);
+    --brand-500: var(--blue-500);
+    --brand-600: var(--blue-600);
+    --brand-700: var(--blue-700);
+    --brand-800: var(--blue-800);
+    --brand-900: var(--blue-900);
+    --brand-950: var(--blue-950);
+  }
+
+  .purple {
+    --brand-25: var(--purple-25);
+    --brand-50: var(--purple-50);
+    --brand-100: var(--purple-100);
+    --brand-200: var(--purple-200);
+    --brand-300: var(--purple-300);
+    --brand-400: var(--purple-400);
+    --brand-500: var(--purple-500);
+    --brand-600: var(--purple-600);
+    --brand-700: var(--purple-700);
+    --brand-800: var(--purple-800);
+    --brand-900: var(--purple-900);
+    --brand-950: var(--purple-950);
+  }
+
+  .red {
+    --brand-25: var(--red-25);
+    --brand-50: var(--red-50);
+    --brand-100: var(--red-100);
+    --brand-200: var(--red-200);
+    --brand-300: var(--red-300);
+    --brand-400: var(--red-400);
+    --brand-500: var(--red-500);
+    --brand-600: var(--red-600);
+    --brand-700: var(--red-700);
+    --brand-800: var(--red-800);
+    --brand-900: var(--red-900);
+    --brand-950: var(--red-950);
+  }
+
+  .orange {
+    --brand-25: var(--orange-25);
+    --brand-50: var(--orange-50);
+    --brand-100: var(--orange-100);
+    --brand-200: var(--orange-200);
+    --brand-300: var(--orange-300);
+    --brand-400: var(--orange-400);
+    --brand-500: var(--orange-500);
+    --brand-600: var(--orange-600);
+    --brand-700: var(--orange-700);
+    --brand-800: var(--orange-800);
+    --brand-900: var(--orange-900);
+    --brand-950: var(--orange-950);
+  }
+}
+
+/* background colors (added as css variables to be used in focus rings) */
+@layer utilities {
+  .ring-bg-primary {
+    --ring-background: light-dark(white, var(--gray-950));
+  }
+  .ring-bg-primary-hover {
+    --ring-background: light-dark(white, var(--gray-950));
+  }
+  .ring-bg-primary-alt {
+    --ring-background: light-dark(white, var(--gray-900));
+  }
+  .ring-bg-primary-solid {
+    --ring-background: light-dark(var(--gray-950), var(--gray-900));
+  }
+
+  .ring-bg-secondary {
+    --ring-background: light-dark(var(--gray-50), var(--gray-900));
+  }
+  .ring-bg-secondary-hover {
+    --ring-background: light-dark(var(--gray-50), var(--gray-900));
+  }
+  .ring-bg-secondary-alt {
+    --ring-background: light-dark(var(--gray-50), var(--gray-950));
+  }
+  .ring-bg-secondary-subtle {
+    --ring-background: light-dark(var(--gray-25), var(--gray-900));
+  }
+  .ring-bg-secondary-solid {
+    --ring-background: light-dark(var(--gray-600), var(--gray-600));
+  }
+
+  .ring-bg-tertiary {
+    --ring-background: light-dark(var(--gray-100), var(--gray-800));
+  }
+  .ring-bg-quaternary {
+    --ring-background: light-dark(var(--gray-200), var(--gray-700));
+  }
+  .ring-bg-active {
+    --ring-background: light-dark(var(--gray-50), var(--gray-800));
+  }
+
+  .ring-bg-disabled {
+    --ring-background: light-dark(var(--gray-100), var(--gray-800));
+  }
+  .ring-bg-disabled-subtle {
+    --ring-background: light-dark(var(--gray-50), var(--gray-900));
+  }
+
+  .ring-bg-overlay {
+    --ring-background: light-dark(var(--gray-950), var(--gray-800));
+  }
+
+  .ring-bg-brand-primary {
+    --ring-background: light-dark(var(--brand-50), var(--brand-500));
+  }
+  .ring-bg-brand-primary-alt {
+    --ring-background: light-dark(var(--brand-50), var(--gray-800));
+  }
+
+  .ring-bg-brand-secondary {
+    --ring-background: light-dark(var(--brand-100), var(--brand-600));
+  }
+
+  .ring-bg-brand-solid {
+    --ring-background: light-dark(var(--brand-600), var(--brand-600));
+  }
+  .ring-bg-brand-solid-hover {
+    --ring-background: light-dark(var(--brand-600), var(--brand-600));
+  }
+
+  .ring-bg-brand-section {
+    --ring-background: light-dark(var(--brand-800), var(--gray-800));
+  }
+  .ring-bg-brand-section-subtle {
+    --ring-background: light-dark(var(--brand-700), var(--gray-950));
+  }
+
+  .ring-bg-error-primary {
+    --ring-background: light-dark(var(--error-50), var(--error-500));
+  }
+  .ring-bg-error-secondary {
+    --ring-background: light-dark(var(--error-100), var(--error-600));
+  }
+  .ring-bg-error-solid {
+    --ring-background: light-dark(var(--error-600), var(--error-600));
+  }
+
+  .ring-bg-warning-primary {
+    --ring-background: light-dark(var(--warning-50), var(--warning-500));
+  }
+  .ring-bg-warning-secondary {
+    --ring-background: light-dark(var(--warning-100), var(--warning-600));
+  }
+  .ring-bg-warning-solid {
+    --ring-background: light-dark(var(--warning-600), var(--warning-600));
+  }
+
+  .ring-bg-success-primary {
+    --ring-background: light-dark(var(--success-50), var(--success-500));
+  }
+  .ring-bg-success-secondary {
+    --ring-background: light-dark(var(--success-100), var(--success-600));
+  }
+  .ring-bg-success-solid {
+    --ring-background: light-dark(var(--success-600), var(--success-600));
+  }
+}
+
+/* box shadows */
+@layer utilities {
+  .shadow-ring:focus-visible,
+  .shadow-ring:active,
+  .shadow-ring[data-state="open"] {
+    box-shadow:
+      0 0 0 2px var(--ring-background, light-dark(white, var(--gray-950))),
+      0 0 0 4px var(--brand-500);
+  }
+
+  .shadow-ring-error:focus-visible,
+  .shadow-ring-error:active,
+  .shadow-ring-error[data-state="open"] {
+    box-shadow:
+      0 0 0 2px var(--ring-background, light-dark(white, var(--gray-950))),
+      0 0 0 4px var(--error-500);
+  }
+
+  .shadow-xs-ring:focus-visible,
+  .shadow-xs-ring:active,
+  .shadow-xs-ring[data-state="open"] {
+    box-shadow:
+      0px 1px 2px 0px #0a0d120d,
+      0px 0px 0px 2px var(--ring-background, light-dark(white, var(--gray-950))),
+      0px 0px 0px 4px var(--brand-500);
+  }
+
+  .shadow-xs-ring-error:focus-visible,
+  .shadow-xs-ring-error:active,
+  .shadow-xs-ring-error[data-state="open"] {
+    box-shadow:
+      0px 1px 2px 0px #0a0d120d,
+      0px 0px 0px 2px var(--ring-background, light-dark(white, var(--gray-950))),
+      0px 0px 0px 4px var(--error-500);
+  }
+
+  .shadow-sm-ring:focus-visible,
+  .shadow-sm-ring:active,
+  .shadow-sm-ring[data-state="open"] {
+    box-shadow:
+      0px 1px 3px 0px #0a0d121a,
+      0px 1px 2px 0px #0a0d120d,
+      0px 0px 0px 2px var(--ring-background, light-dark(white, var(--gray-950))),
+      0px 0px 0px 4px var(--brand-500);
+  }
+
+  .shadow-xs-skeumorphic-ring:focus-visible,
+  .shadow-xs-skeumorphic-ring:active,
+  .shadow-xs-skeumorphic-ring[data-state="open"] {
+    box-shadow:
+      0px 0px 0px 1px #0a0d122e inset,
+      0px -2px 0px 0px #0a0d120d inset,
+      0px 1px 2px 0px #0a0d120d,
+      0px 0px 0px 2px var(--ring-background, light-dark(white, var(--gray-950))),
+      0px 0px 0px 4px var(--brand-500);
+  }
+
+  .shadow-xs-skeumorphic-ring-error:focus-visible,
+  .shadow-xs-skeumorphic-ring-error:active,
+  .shadow-xs-skeumorphic-ring-error[data-state="open"] {
+    box-shadow:
+      0px 0px 0px 1px #0a0d122e inset,
+      0px -2px 0px 0px #0a0d120d inset,
+      0px 1px 2px 0px #0a0d120d,
+      0px 0px 0px 2px var(--ring-background, light-dark(white, var(--gray-950))),
+      0px 0px 0px 4px var(--error-500);
+  }
+}
+
+/* on hover colors */
+@layer utilities {
+  .text-secondary-hover:hover {
+    color: light-dark(var(--gray-800), var(--gray-200));
+  }
+
+  .text-tertiary-hover:hover {
+    color: light-dark(var(--gray-700), var(--gray-300));
+  }
+
+  .text-quinary-hover:hover {
+    color: light-dark(var(--gray-500), var(--gray-400));
+  }
+
+  .bg-primary-hover:hover {
+    background-color: light-dark(var(--gray-50), var(--gray-800));
+  }
+
+  .bg-secondary-hover:hover {
+    background-color: light-dark(var(--gray-100), var(--gray-800));
+  }
+
+  .bg-brand-solid-hover:hover {
+    background-color: light-dark(var(--brand-700), var(--brand-500));
+  }
+}

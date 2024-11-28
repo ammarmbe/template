@@ -2,6 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply font-sans antialiased;
+* {
+  @apply border-secondary outline-none;
+}
+
+*:disabled,
+*[aria-disabled] {
+  @apply cursor-not-allowed;
+}
+
+.react-loading-skeleton {
+  --base-color: rgb(var(--utility-gray-100));
+  --highlight-color: rgb(var(--utility-gray-200));
+}
+
+*[aria-label*="sonner-toast"] {
+  @apply relative z-[9999];
+}
+
+/* button classes */
+.primary-button::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  border-color: transparent;
+  background: linear-gradient(to bottom, #ffffff1f, #ffffff00) border-box;
+  mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
 }

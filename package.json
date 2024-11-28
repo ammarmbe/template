@@ -19,15 +19,28 @@
     "next": "15.0.3"
   },
   "devDependencies": {
+    "@radix-ui/react-checkbox": "^1.1.2",
+    "@radix-ui/react-dropdown-menu": "^2.1.2",
+    "@radix-ui/react-radio-group": "^1.2.1",
+    "@radix-ui/react-switch": "^1.1.1",
+    "@radix-ui/react-visually-hidden": "^1.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
+    "lucide-react": "^0.462.0",
+    "next-nprogress-bar": "^2.3.15",
+    "nuqs": "^2.2.3",
     "postcss": "^8",
     "prettier": "^3.4.1",
     "prettier-plugin-tailwindcss": "^0.6.9",
+    "react-loading-skeleton": "^3.5.0",
+    "sonner": "^1.7.0",
+    "tailwind-merge": "^2.5.5",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "use-debounce": "^10.0.4",
+    "vaul": "^1.1.1"
   }
 }

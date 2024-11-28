@@ -1,6 +1,13 @@
+import "react-loading-skeleton/dist/skeleton.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import "@/styles/variables.css";
 import "@/styles/globals.css";
+import ProgressBar from "@/components/primitives/progress-bar";
+import { NuqsAdapter } from "nuqs/adapters/next";
+import { Toaster } from "sonner";
+import Sidebar from "@/components/primitives/sidebar/sidebar";
+import { twJoin } from "tailwind-merge";
 
 const geistSans = localFont({
   src: "../../public/fonts/GeistVF.woff",
@@ -27,8 +34,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body
+        className={twJoin(
+          "flex h-dvh flex-col bg-primary font-sans text-primary antialiased md:flex-row",
+          "purple",
+          geistSans.variable,
+          geistMono.variable,
+        )}
+      >
+        <ProgressBar />
+        <Toaster
+          toastOptions={{
+            className: "w-full z-[100000]",
+          }}
+          containerAriaLabel="sonner-toast"
+        />
+        <NuqsAdapter>
+          <Sidebar />
+          {children}
+        </NuqsAdapter>
       </body>
     </html>
   );
