@@ -20,6 +20,12 @@
   @apply relative z-[9999];
 }
 
+@keyframes spinner {
+  to {
+    opacity: 0.15;
+  }
+}
+
 /* button classes */
 .primary-button::after {
   content: "";
